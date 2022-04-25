@@ -4,8 +4,8 @@ Studying the behaviours and patterns drawn by ResNets on The Met dataset.
 
 Here, we use the mini-Met dataset which contains 33501 classes of images. In our experimentation so far, we have delved into
 1) [ResNet18 on ImageNet](https://drive.google.com/file/d/1amFEYsUmJkJlG1Kt0RQ_dAiYS-kojrgi/view?usp=sharing): The standard ResNet backbone. 
-2) ResNet18SRC on ImageNet: trained on Met with contrastive loss (Syn+Real-Closest). Initialization: ImageNet pre-training.
-3) ResNet18-SWSL-SRC: trained on Met with contrastive loss (Syn+Real-Closest). Initialization: SWSL.
+2) [ResNet18SRC on ImageNet](https://drive.google.com/file/d/1c6X9DxyGKHgKxj69UPZE2BhWvXL2z20X/view?usp=sharing): Trained on Met with contrastive loss (Syn+Real-Closest). Initialization: ImageNet pre-training.
+3) [ResNet18-SWSL-SRC](https://drive.google.com/file/d/11aOyuZaUFze7ffDHJz-A7__rWArT2fsW/view?usp=sharing): Trained on Met with contrastive loss (Syn+Real-Closest). Initialization: SWSL.
 ### Usage
 
 Navigate (```cd```) to ```[YOUR_MET_ROOT]/met/code```. ```[YOUR_MET_ROOT]``` is where you have cloned this repository. 
