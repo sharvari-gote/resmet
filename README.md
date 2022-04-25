@@ -31,12 +31,12 @@ Navigate (```cd```) to ```[YOUR_MET_ROOT]/met/code```. ```[YOUR_MET_ROOT]``` is 
 
   Run the below command and use -h for help options as shown below:
   ```
-  python3 -m code.examples.knn_eval -h
+  python3 -m examples.knn_eval -h
   ```
 
   Example (using ground truth and descriptors downloaded from [here](http://cmp.felk.cvut.cz/met/), after unzipping both):  
   ```
-  python -m code.examples.knn_eval [YOUR_DESCRIPTOR_DIR] --autotune --info_dir [YOUR_GROUND_TRUTH_DIR]
+  python -m examples.knn_eval [YOUR_DESCRIPTOR_DIR] --autotune --info_dir [YOUR_GROUND_TRUTH_DIR]
   ```
 
 </details>
@@ -49,7 +49,7 @@ Navigate (```cd```) to ```[YOUR_MET_ROOT]/met/code```. ```[YOUR_MET_ROOT]``` is 
 
   For detailed explanation of the options run:  
   ```
-  python3 -m code.examples.train_contrastive -h
+  python3 -m examples.train_contrastive -h
   ```
 
 </details>
