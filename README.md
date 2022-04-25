@@ -45,7 +45,7 @@ Navigate (```cd```) to ```[YOUR_MET_ROOT]/met/code```. ```[YOUR_MET_ROOT]``` is 
   
   <summary><b>Training with contrastive loss</b></summary><br/>
 
-  The trained network can be used for descriptor extraction and kNN classification.
+  Train using a parametric approach with contrastive learning.
 
   For detailed explanation of the options run:  
   ```
