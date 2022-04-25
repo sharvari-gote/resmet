@@ -1,8 +1,8 @@
 # Augmenting Backbone Approaches To Instance-level Recognition For Artworks
-Studying the behaviours and patterns drawn by ResNets on '[The Met](https://www.metmuseum.org/)' dataset.
+Studying the behaviours and patterns drawn by [ResNets](https://en.wikipedia.org/wiki/Residual_neural_network) on '[The Met](https://www.metmuseum.org/)' dataset.
 
 
-Here, we use 'The Mini Met' dataset which contains 33501 classes of images. In our experimentation so far, we have delved into
+Here, we use 'The Mini Met' [dataset](http://cmp.felk.cvut.cz/met/) which contains 33501 classes of 'art'. In our experimentation so far, we have delved into the following (click to download the Descriptors):
 1) [ResNet18 on ImageNet](https://drive.google.com/file/d/1amFEYsUmJkJlG1Kt0RQ_dAiYS-kojrgi/view?usp=sharing): The standard ResNet backbone. 
 2) [ResNet18SRC on ImageNet](https://drive.google.com/file/d/1c6X9DxyGKHgKxj69UPZE2BhWvXL2z20X/view?usp=sharing): Trained on Met with contrastive loss (Syn+Real-Closest). Initialization: ImageNet pre-training.
 3) [ResNet18-SWSL-SRC](https://drive.google.com/file/d/11aOyuZaUFze7ffDHJz-A7__rWArT2fsW/view?usp=sharing): Trained on Met with contrastive loss (Syn+Real-Closest). Initialization: SWSL.
