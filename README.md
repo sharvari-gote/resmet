@@ -2,14 +2,39 @@
 Studying the behaviours and patterns drawn by [ResNets](https://en.wikipedia.org/wiki/Residual_neural_network) on '[The Met](https://www.metmuseum.org/)' dataset.
 
 
-Here, we use 'The Mini Met' [dataset](http://cmp.felk.cvut.cz/met/) which contains 33501 classes of 'art'. In our experimentation so far, we have delved into the following (click to download the Descriptors):
+Here, we use 'The Mini Met' & 'Met' [dataset](http://cmp.felk.cvut.cz/met/) which contains 33501 and 220k+ classes of 'art' respectively. In our experimentation so far, we have delved into the following (click to download the Descriptors):
 1) [ResNet18 on ImageNet](https://drive.google.com/file/d/1amFEYsUmJkJlG1Kt0RQ_dAiYS-kojrgi/view?usp=sharing): The standard ResNet backbone. 
 2) [ResNet18SRC on ImageNet](https://drive.google.com/file/d/1c6X9DxyGKHgKxj69UPZE2BhWvXL2z20X/view?usp=sharing): Trained on Met with contrastive loss (Syn+Real-Closest). Initialization: ImageNet pre-training.
 3) [ResNet18-SWSL-SRC](https://drive.google.com/file/d/11aOyuZaUFze7ffDHJz-A7__rWArT2fsW/view?usp=sharing): Trained on Met with contrastive loss (Syn+Real-Closest). Initialization: SWSL.
 ### Usage
 
-Navigate (```cd```) to ```[YOUR_MET_ROOT]/met/code```. ```[YOUR_MET_ROOT]``` is where you have cloned this repository. 
 
+
+Navigate (```cd```) to ```[YOUR_MET_ROOT]/met/code```. ```[YOUR_MET_ROOT]``` is where you have cloned this repository. 
+<details>
+  <summary><b>Readily train a non-parametric model</b></summary><br/>
+  </details>
+  Here, we collectively perform the training and extract the descriptors for the network variant that you wish to run from this list:
+  r18INgem
+  r50INgem
+  r50_swav_gem
+  r50_SIN_gem
+  r50INgem_caffe
+  r18_sw-sup_gem
+  r50_sw-sup_gem
+  resnext50_32x4d_swsl
+  resnext101_32x4d_swsl
+  resnext101_32x8d_swsl
+  resnext101_32x16d_swsl
+  
+  Enter the variant name as one of the above when prompted.
+  For the datasets, you can choose to train it on the Mini dataset or the full dataset. You can download the datasets [here](http://cmp.felk.cvut.cz/met/).
+  You can download the train, test, and validation descriptors [here](http://cmp.felk.cvut.cz/met/).
+  Once ready, the following:
+  ```
+  python3 train_the_model.py
+  ```
+  
 <details>
 
   <summary><b>Descriptor extraction</b></summary><br/>
