@@ -3,10 +3,16 @@ Studying the behaviours and patterns drawn by [ResNets](https://en.wikipedia.org
 
 
 Here, we use 'The Mini Met' & 'Met' [dataset](http://cmp.felk.cvut.cz/met/) which contains 33501 and 220k+ classes of 'art' respectively. In our experimentation so far, we have delved into the following (click to download the Descriptors):
-1) [ResNet18 on ImageNet] ([Mini](https://drive.google.com/file/d/1z1xlRD9-I55N6xh1pki70D0EArHo6uwB/view?usp=sharing)/[Met](https://drive.google.com/file/d/1CUSdCKndQCsX6zJ6q6VHPJsM5HKIHQKJ/view?usp=sharing))
-2) [ResNet18SRC on ImageNet](https://drive.google.com/file/d/1c6X9DxyGKHgKxj69UPZE2BhWvXL2z20X/view?usp=sharing)
-3) [ResNet18-SWSL-SRC](https://drive.google.com/file/d/11aOyuZaUFze7ffDHJz-A7__rWArT2fsW/view?usp=sharing)
-4) [ResNet18-SWSL-SRC](https://drive.google.com/file/d/11aOyuZaUFze7ffDHJz-A7__rWArT2fsW/view?usp=sharing)
+1) ResNet18 on ImageNet ([Mini](https://drive.google.com/file/d/1z1xlRD9-I55N6xh1pki70D0EArHo6uwB/view?usp=sharing)/[Met](https://drive.google.com/file/d/1CUSdCKndQCsX6zJ6q6VHPJsM5HKIHQKJ/view?usp=sharing))
+2) ResNet50 on ImageNet ([Mini](https://drive.google.com/file/d/1-JfnXbbdxokhNhne6s4e88F5Evq2Hoa-/view?usp=sharing)/[Met](https://drive.google.com/file/d/1mfhUqmRCHz2iBeZLHJo-HhFih5X2QUsm/view?usp=sharing))
+3) R50SWaV ([Mini](https://drive.google.com/file/d/1ei9nZsUOplOjdJT2Ct_uzeGZ6kjToiXt/view?usp=sharing)/[Met](https://drive.google.com/file/d/1Z5mHEY4CAbAzCy2qc6vJYk2GwuxnmJNK/view?usp=sharing))
+4) R50SIN on ImageNet ([Mini](https://drive.google.com/file/d/1-G6RT1bxmkYu8wtrVxQrv7FO4tf9uLNc/view?usp=sharing)/[Met](https://drive.google.com/file/d/1qUma78e2HYckELM1G6TMwmTd8XkJlzpU/view?usp=sharing))
+5) R18Sw-Sup on ImageNet ([Mini](https://drive.google.com/file/d/1-O5NMlxCAk4_ohG81XChLObo-VSm7i0K/view?usp=sharing)/[Met](https://drive.google.com/file/d/1N5nrLrKsH1bC9wjXYk2f0BrD63_dfzgq/view?usp=sharing))
+6) R50Sw-Sup on ImageNet ([Mini](https://drive.google.com/file/d/1-ZhZGyWArJpna0a6gDC1XTE556YjdfFf/view?usp=sharing)/[Met](https://drive.google.com/file/d/1E1hAa98S-i6l79h_acy96gdkA8GjAW_9/view?usp=sharing))
+7) ResNeXt-50-32x4d-SWSL on ImageNet ([Mini](https://drive.google.com/file/d/1-l_a-kqHPzbBvkppCMG7hnQTCJoMoYlm/view?usp=sharing)/[Met](https://drive.google.com/file/d/1-M6H1kPduHafLEm9ImFoTD6Mgvay023k/view?usp=sharing))
+8) ResNeXt-101-32x4d-SWSL on ImageNet ([Mini](https://drive.google.com/file/d/1-x6cCo56_cv1YXjs9SWcd4xv_ASfze3q/view?usp=sharing)/[Met](https://drive.google.com/file/d/1kZFIrGgbROUrhZFQNePlM8xgmrXgMzQ5/view?usp=sharing))
+9) ResNeXt-101-32x8d-SWSL on ImageNet ([Mini](https://drive.google.com/file/d/1-3_4rTSCmF4BAQTPcD7Yf17a6pGPXZ_S/view?usp=sharing)/[Met](https://drive.google.com/file/d/1GV0jzMkeMvDNBtUdEk4JNvBAToLcUjCI/view?usp=sharing))
+10) ResNeXt-101-32x16d-SWSL on ImageNet ([Mini]()/[Met](https://drive.google.com/file/d/1S1My1S9Z7y2ZdXK7HoN1FVVwzv8C9Xft/view?usp=sharing))
 
 ### Usage
 
