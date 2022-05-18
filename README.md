@@ -47,7 +47,6 @@ Navigate (```cd```) to ```[YOUR_MET_ROOT]/met/code```. ```[YOUR_MET_ROOT]``` is 
   <summary><b>Perform a KNN test</b></summary>
   <br/>You can download the train, test, and validation descriptors [here](http://cmp.felk.cvut.cz/met/).<br/>
  Download the train descriptors from the list on top of the README.<br/>
-  
   Once ready, run the following and follow the prompts:
   ```
   python3 run_knn_test.py
