@@ -457,10 +457,22 @@ def main():
         miniOrNot = input("Please enter 1 if you are training on the mini dataset. Else, enter 0 for training on the entire dataset")
         if(miniOrNot == "1"):
             mini = True
+            miniFlag = False
         elif(miniOrNot == "0"):
             mini = False
+            miniFlag = False
         else:
             print("Invalid input. Try again.")
+    miniFlag = True
+    mini = None
+    while(miniFlag):
+        im_root = input("Please enter the path for the testing and validation datasets:")
+        image_root = input("Please enter the path for the training dataset:")
+        train_root = input("Please enter the path where the ground truth is stored:")
+        if(os.path.isfile(train_root + "/testset.json")):
+            miniFlag = False
+        else:
+            print("Please enter a valid input.")
     exp_name = network_variant
     exp_name+=("_ms")
     if mini:
@@ -475,16 +487,16 @@ def main():
     print("Will save descriptors in {}".format(exp_dir))
 	
     extraction_transform = augmentation("augment_inference")
-
+    
     #train_root = args.info_dir
-    image_root = './codeFiles/code/datasets_dir/'
-    train_root = './codeFiles/code/datasets_dir/ground_truth'
+    #image_root = './codeFiles/code/datasets_dir/'
+    #train_root = './codeFiles/code/datasets_dir/ground_truth'
     if(mini):
         num_classes = 33501
-        train_dataset = MET_database(root = train_root,mini= True,transform = extraction_transform,im_root = im_root)
+        train_dataset = MET_database(root = train_root,mini= True,transform = extraction_transform,im_root = image_root)
     else:
         num_classes = 224408 
-        train_dataset = MET_database(root = train_root,transform = extraction_transform,im_root = im_root)
+        train_dataset = MET_database(root = train_root,transform = extraction_transform,im_root = image_root)
     query_root = train_root
     #train_dataset = MET_database(root = train_root,transform = extraction_transform,im_root = './METFiles/')
     train_dataset = MET_database(root = train_root,mini= True,transform = extraction_transform,im_root = im_root)
