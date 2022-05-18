@@ -12,7 +12,7 @@ Here, we use 'The Mini Met' & 'Met' [dataset](http://cmp.felk.cvut.cz/met/) whic
 7) ResNeXt-50-32x4d-SWSL ([Mini](https://drive.google.com/file/d/1-l_a-kqHPzbBvkppCMG7hnQTCJoMoYlm/view?usp=sharing)/[Met](https://drive.google.com/file/d/1-M6H1kPduHafLEm9ImFoTD6Mgvay023k/view?usp=sharing))
 8) ResNeXt-101-32x4d-SWSL ([Mini](https://drive.google.com/file/d/1-x6cCo56_cv1YXjs9SWcd4xv_ASfze3q/view?usp=sharing)/[Met](https://drive.google.com/file/d/1kZFIrGgbROUrhZFQNePlM8xgmrXgMzQ5/view?usp=sharing))
 9) ResNeXt-101-32x8d-SWSL ([Mini](https://drive.google.com/file/d/1-3_4rTSCmF4BAQTPcD7Yf17a6pGPXZ_S/view?usp=sharing)/[Met](https://drive.google.com/file/d/1GV0jzMkeMvDNBtUdEk4JNvBAToLcUjCI/view?usp=sharing))
-10) ResNeXt-101-32x16d-SWSL ([Mini]()/[Met](https://drive.google.com/file/d/1S1My1S9Z7y2ZdXK7HoN1FVVwzv8C9Xft/view?usp=sharing))
+10) ResNeXt-101-32x16d-SWSL ([Mini](https://drive.google.com/drive/folders/1IOBub7dDd5RECiBKA9eyEFdO-MF7HlJ3)/[Met](https://drive.google.com/file/d/1S1My1S9Z7y2ZdXK7HoN1FVVwzv8C9Xft/view?usp=sharing))
 
 ### Usage
 
