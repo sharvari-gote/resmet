@@ -21,8 +21,6 @@ Here, we use 'The Mini Met' & 'Met' [dataset](http://cmp.felk.cvut.cz/met/) whic
 Navigate (```cd```) to ```[YOUR_MET_ROOT]/met/code```. ```[YOUR_MET_ROOT]``` is where you have cloned this repository. 
 <details>
   
-  <details>
-  
   <summary><b>Perform a KNN test</b></summary><br/>
   
   You can download the train, test, and validation descriptors [here](http://cmp.felk.cvut.cz/met/).
@@ -34,6 +32,9 @@ Navigate (```cd```) to ```[YOUR_MET_ROOT]/met/code```. ```[YOUR_MET_ROOT]``` is 
   ```
 
 </details>
+<details>
+  
+  
   
   <summary><b>Readily train a non-parametric model</b></summary><br/>
   
