@@ -3,9 +3,11 @@ Studying the behaviours and patterns drawn by [ResNets](https://en.wikipedia.org
 
 
 Here, we use 'The Mini Met' & 'Met' [dataset](http://cmp.felk.cvut.cz/met/) which contains 33501 and 220k+ classes of 'art' respectively. In our experimentation so far, we have delved into the following (click to download the Descriptors):
-1) [ResNet18 on ImageNet](https://drive.google.com/file/d/1amFEYsUmJkJlG1Kt0RQ_dAiYS-kojrgi/view?usp=sharing): The standard ResNet backbone. 
-2) [ResNet18SRC on ImageNet](https://drive.google.com/file/d/1c6X9DxyGKHgKxj69UPZE2BhWvXL2z20X/view?usp=sharing): Trained on Met with contrastive loss (Syn+Real-Closest). Initialization: ImageNet pre-training.
-3) [ResNet18-SWSL-SRC](https://drive.google.com/file/d/11aOyuZaUFze7ffDHJz-A7__rWArT2fsW/view?usp=sharing): Trained on Met with contrastive loss (Syn+Real-Closest). Initialization: SWSL.
+1) [ResNet18 on ImageNet] ([Mini](https://drive.google.com/file/d/1z1xlRD9-I55N6xh1pki70D0EArHo6uwB/view?usp=sharing)/[Met](https://drive.google.com/file/d/1CUSdCKndQCsX6zJ6q6VHPJsM5HKIHQKJ/view?usp=sharing))
+2) [ResNet18SRC on ImageNet](https://drive.google.com/file/d/1c6X9DxyGKHgKxj69UPZE2BhWvXL2z20X/view?usp=sharing)
+3) [ResNet18-SWSL-SRC](https://drive.google.com/file/d/11aOyuZaUFze7ffDHJz-A7__rWArT2fsW/view?usp=sharing)
+4) [ResNet18-SWSL-SRC](https://drive.google.com/file/d/11aOyuZaUFze7ffDHJz-A7__rWArT2fsW/view?usp=sharing)
+
 ### Usage
 
 
@@ -37,9 +39,12 @@ Navigate (```cd```) to ```[YOUR_MET_ROOT]/met/code```. ```[YOUR_MET_ROOT]``` is 
   </details>
   <details>
   <summary><b>Perform a KNN test</b></summary>
+  <br/>You can download the train, test, and validation descriptors [here](http://cmp.felk.cvut.cz/met/).<br/>
+ Download the train descriptors from the list on top of the README.<br/>
+  
   Once ready, run the following and follow the prompts:
   ```
-  python3 run_the_test.py
+  python3 run_knn_test.py
   ```
   </details>
   
