@@ -74,7 +74,7 @@ def tune_KNN(param_grid,train_descr,train_labels,val_descr,val_labels,verbose = 
         clf.fit(train_descr,train_labels)
         val_preds,val_confs = clf.predict(val_descr)
         print(param_set)
-        gap,_,_ = evaluate(val_preds,val_confs,val_labels,verbose=verbose)
+        gap,_,_ = utils.evaluate(val_preds,val_confs,val_labels,verbose=verbose)
 
         score = gap
         if score > best_score:

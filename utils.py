@@ -1,5 +1,8 @@
 import torch
 import numpy as np
+import datetime
+import time
+
 
 #from code.networks.backbone import *
 from backbone import *
@@ -132,7 +135,7 @@ def estimate_pca_whiten_with_shrinkage(X, shrinkage=1.0, dimensions=None):
 def extract_embeddings(net,dataloader,ms=[1],msp=1,print_freq=None,verbose = False):
     '''Credits to Filip Radenovic (https://github.com/filipradenovic/cnnimageretrieval-pytorch)
     '''
-
+    
     if verbose:
 
         if len(ms) == 1:
@@ -145,20 +148,36 @@ def extract_embeddings(net,dataloader,ms=[1],msp=1,print_freq=None,verbose = Fal
     with torch.no_grad():
 
         vecs = np.zeros((net.meta['outputdim'], len(dataloader.dataset)))
-    
+        start = time.time()
         for i,input in enumerate(dataloader):
 
             if len(ms) == 1 and ms[0] == 1:
-                #vecs[:, i] = extract_ss(net,input[0].cuda())
-                vecs[:, i] = extract_ss(net,input[0])
+                vecs[:, i] = extract_ss(net,input[0].cuda())
+                #vecs[:, i] = extract_ss(net,input[0])
             
             else:
-                #vecs[:, i] = extract_ms(net,input[0].cuda(), ms, msp)
-                vecs[:, i] = extract_ms(net,input[0], ms, msp)
+                vecs[:, i] = extract_ms(net,input[0].cuda(), ms, msp)
+                #vecs[:, i] = extract_ms(net,input[0], ms, msp)
 
             if print_freq is not None:
                 if i%print_freq == 0:
                     print("image: "+str(i))
+                    print("Completed "+str((i+1)/390) + "% at "+str(datetime.datetime.now()))
+                    end = time.time()
+                    elapsed = (end - start)
+                    print("Time elapsed so far: "+str(elapsed/60)+" minutes.")
+                    rate = (i+1)/elapsed
+                    print("Current rate: "+str(rate*60)+" images per minute.")
+                    remaining_i = 38306 - i
+                    remaining_time = remaining_i/rate  
+                    print("Estimated time remaining: "+str(remaining_time/60)+" minutes.")
+                    current = time.time()
+                    current = current + remaining_time
+                    eta = datetime.datetime.fromtimestamp(current)
+                    print("Around "+str(eta))
+                    
+                    
+                
 
     return vecs.T
 

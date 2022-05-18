@@ -7,7 +7,7 @@ import datetime
 
 import utils
 import knn_classifier
-
+import numpy as np
 
 
 

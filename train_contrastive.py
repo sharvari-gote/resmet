@@ -5,13 +5,22 @@ import pickle
 import math
 import numpy as np
 
-from code.utils.train_utils import *
+#from code.utilsp.train_utils import *
+'''
+from code.utilsp.train_utils import *
 from code.networks.SiameseNet import *
-from code.utils.datasets import *
-from code.utils.utils import *
-from code.utils.losses import *
-from code.utils.augmentations import augmentation
-
+from code.utilsp.datasets import *
+from code.utilsp.utils import *
+from code.utilsp.losses import *
+from code.utilsp.augmentations import augmentation
+'''
+from train_utils import *
+from SiameseNet import *
+from datasets import *
+from utils import *
+from losses import *
+from augmentations import *
+import train_utils
 
 import torch
 import torch.nn as nn
@@ -61,15 +70,15 @@ def main():
 	parser.add_argument('--pca', action='store_true') #additionaly initialize FC layer with pca
 	parser.add_argument('--seed', default=None, type=int)
 	parser.add_argument('--init_descr', type = str, default= None) #descriptors that are output by the backbone before training; should be singlescale
-	parser.add_argument('--info_dir',default=None, type=str, help = 'directory where ground truth is stored') 
-	parser.add_argument('--im_root',default=None, type=str, help = 'directory where images are stored')
+	parser.add_argument('--info_dir',default='./datasets_dir/ground_truth', type=str, help = 'directory where ground truth is stored') 
+	parser.add_argument('--im_root',default='./datasets_dir/', type=str, help = 'directory where images are stored')
 
 	args = parser.parse_args()
 
 	if args.seed is not None:
 		
 		torch.manual_seed(args.seed)
-		torch.cuda.manual_seed_all(args.seed)
+		#torch.cuda.manual_seed_all(args.seed)
 		np.random.seed(args.seed)
 
 	os.environ['CUDA_VISIBLE_DEVICES'] = str(args.gpuid)
@@ -127,7 +136,7 @@ def main():
 	else:
 		print("extracting initial descriptors")
 		train_descr = extract_embeddings(siamese_network(args.net,pooling = "gem",
-			pretrained = args.pretrained).backbone.cuda(),train_infer_loader,ms = [1],msp = 1.0)
+			pretrained = args.pretrained).backbone,train_infer_loader,ms = [1],msp = 1.0, print_freq=1000)
 
 
 	if args.emb_proj: #in this case the backbone contains the optional FC layer
@@ -159,13 +168,20 @@ def main():
 
 
 	#initialize the model and move it to the gpu
+    
 	model = siamese_network(args.net,pooling = "gem",pretrained = args.pretrained,
 				emb_proj = args.emb_proj,init_emb_projector = PCA_stats).cuda()
 
-	criterion = ContrastiveLoss(margin = args.margin).cuda()
-	
+	criterion = ContrastiveLoss(margin = args.margin)
+	optimizer = optim.Adam(model.parameters(),lr=float(args.backbone_lr), weight_decay = args.wdecay).cuda()
+	'''
+        model = siamese_network(args.net,pooling = "gem",pretrained = args.pretrained,
+				emb_proj = args.emb_proj,init_emb_projector = PCA_stats)
+
+	criterion = ContrastiveLoss(margin = args.margin)
 	optimizer = optim.Adam(model.parameters(),lr = float(args.backbone_lr),
 					weight_decay = args.wdecay)
+    '''
 
 	scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=args.sched_step, gamma=args.sched_gamma)
 
@@ -197,7 +213,7 @@ def main():
 		print("Backbone evaluation")
 		print("Printing validation set knn evaluation metrics before train")
 		
-		val_gap,val_non_distr_gap,val_acc = validate(model.backbone,train_infer_loader,
+		val_gap,val_non_distr_gap,val_acc = train_utils.validate(model.backbone,train_infer_loader,
 			np.array(train_infer_dataset.targets),val_loader,np.array(val_dataset.targets))
 
 
@@ -241,7 +257,7 @@ def main():
 
 		if checkpoint_path is not None:
 
-			save_checkpoint({'epoch': epoch,'state_dict': model.state_dict(),'val_gap': val_gap,
+			train_utils.save_checkpoint({'epoch': epoch,'state_dict': model.state_dict(),'val_gap': val_gap,
 					'optimizer' : optimizer.state_dict()},checkpoint_path,epoch)
 			
 			print("Checkpoint saved at: " + checkpoint_path + "_epoch:_" + str(epoch))

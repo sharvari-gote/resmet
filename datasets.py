@@ -9,6 +9,9 @@ from torch.utils.data import Dataset
 from torchvision.datasets.vision import VisionDataset
 from torchvision.datasets.folder import default_loader
 
+#from train_utils import mine_negatives
+#from train_utils import mine_positive
+from train_utils import *
 import train_utils
 
 
@@ -300,7 +303,7 @@ class MET_pairs_dataset(VisionDataset):
                     self.pair_targets.append(1) #1 to indicate positive pair
                 
                 else:
-                    index2 = mine_positive(i,same_class_sample_idxs,train_descr)
+                    index2 = train_utils.mine_positive(i,same_class_sample_idxs,train_descr)
                     self.pairs.append((sample,self.samples2[index2]))
                     self.pair_targets.append(1)
 
@@ -313,7 +316,7 @@ class MET_pairs_dataset(VisionDataset):
 
             print("creating negative pairs")
 
-            negatives = mine_negatives(self.samples2,self.root,train_descr,self.targets2)
+            negatives = train_utils.mine_negatives(self.samples2,self.root,train_descr,self.targets2)
             
             #negatives is a list with the negative corresponding to each sample
             for i,image in enumerate(self.samples2):

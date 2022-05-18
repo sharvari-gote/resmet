@@ -11,7 +11,7 @@ import torch.nn as nn
 import augmentations
 import datasets
 import losses
-import train_utils
+#import train_utils
 import utils
 import knn_classifier
 #from utils import *
@@ -36,9 +36,9 @@ def train_contrastive_1epoch_virtual(model,criterion,optimizer,train_loader,epoc
 	for i,(pair,targets) in enumerate(train_loader):
 
 		targets = targets.cuda()
-
 		#forward pass
 		embeds = model(pair[0].cuda(),pair[1].cuda())
+		#embeds = model(pair[0],pair[1])
 
 		#loss calculation
 		loss = criterion(embeds[0],embeds[1],targets)/vbsizemul
@@ -120,19 +120,19 @@ def validate(net,train_loader,train_labels,val_loader,val_labels,ret_train_descr
 
 	#descriptor extraction (singlescale for validation)
 	if train_descr is None:
-		train_descr = extract_embeddings(net,train_loader,ms = [1],msp = 1.0)
+		train_descr = utils.extract_embeddings(net,train_loader,ms = [1],msp = 1.0, print_freq = 100)
 
-	val_descr = extract_embeddings(net,val_loader,ms = [1],msp = 1.0)
+	val_descr = utils.extract_embeddings(net,val_loader,ms = [1],msp = 1.0, print_freq = 100)
 
 	train_descr = np.ascontiguousarray(train_descr,dtype=np.float32)
 	val_descr = np.ascontiguousarray(val_descr,dtype=np.float32)
 
 		
-	clf = KNN_Classifier(K = 1,t = 1)
+	clf = knn_classifier.KNN_Classifier(K = 1,t = 1)
 	clf.fit(train_descr,train_labels)
 
 	val_preds,val_confs = clf.predict(val_descr)
-	val_gap,val_non_distr_gap,val_acc = evaluate(np.array(val_preds),np.array(val_confs),val_labels)
+	val_gap,val_non_distr_gap,val_acc = utils.evaluate(np.array(val_preds),np.array(val_confs),val_labels)
 
 
 	if ret_train_descr:

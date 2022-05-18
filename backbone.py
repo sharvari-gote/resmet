@@ -120,7 +120,7 @@ class Embedder(nn.Module):
 def extract_ss(net, input):
 	'''Credits to Filip Radenovic (https://github.com/filipradenovic/cnnimageretrieval-pytorch)
 	'''
-
+	#return net(input).data.squeeze()
 	return net(input).cpu().data.squeeze()
 
 
