@@ -13,7 +13,7 @@ Here, we use 'The Mini Met' & 'Met' [dataset](http://cmp.felk.cvut.cz/met/) whic
 Navigate (```cd```) to ```[YOUR_MET_ROOT]/met/code```. ```[YOUR_MET_ROOT]``` is where you have cloned this repository. 
 <details>
   <summary><b>Readily train a non-parametric model</b></summary><br/>
-  </details>
+  
   Here, we collectively perform the training and extract the descriptors for the network variant that you wish to run from this list:<br/>
   r18INgem<br/>
   r50INgem<br/>
@@ -27,13 +27,21 @@ Navigate (```cd```) to ```[YOUR_MET_ROOT]/met/code```. ```[YOUR_MET_ROOT]``` is 
   resnext101_32x8d_swsl<br/>
   resnext101_32x16d_swsl<br/>
   
-  Enter the variant name as one of the above when prompted.
+  Enter the variant name as one of the above when prompted.<br/>
   For the datasets, you can choose to train it on the Mini dataset or the full dataset. You can download the datasets [here](http://cmp.felk.cvut.cz/met/).
-  You can download the train, test, and validation descriptors [here](http://cmp.felk.cvut.cz/met/).
-  Once ready, the following:
+  <br/>You can download the train, test, and validation descriptors [here](http://cmp.felk.cvut.cz/met/).<br/>
+  Once ready, run the following:
   ```
   python3 train_the_model.py
   ```
+  </details>
+  <details>
+  <summary><b>Perform a KNN test</b></summary>
+  Once ready, run the following and follow the prompts:
+  ```
+  python3 run_the_test.py
+  ```
+  </details>
   
 <details>
 
