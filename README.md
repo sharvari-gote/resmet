@@ -14,18 +14,18 @@ Navigate (```cd```) to ```[YOUR_MET_ROOT]/met/code```. ```[YOUR_MET_ROOT]``` is 
 <details>
   <summary><b>Readily train a non-parametric model</b></summary><br/>
   </details>
-  Here, we collectively perform the training and extract the descriptors for the network variant that you wish to run from this list:
-  r18INgem
-  r50INgem
-  r50_swav_gem
-  r50_SIN_gem
-  r50INgem_caffe
-  r18_sw-sup_gem
-  r50_sw-sup_gem
-  resnext50_32x4d_swsl
-  resnext101_32x4d_swsl
-  resnext101_32x8d_swsl
-  resnext101_32x16d_swsl
+  Here, we collectively perform the training and extract the descriptors for the network variant that you wish to run from this list:<br/>
+  r18INgem<br/>
+  r50INgem<br/>
+  r50_swav_gem<br/>
+  r50_SIN_gem<br/>
+  r50INgem_caffe<br/>
+  r18_sw-sup_gem<br/>
+  r50_sw-sup_gem<br/>
+  resnext50_32x4d_swsl<br/>
+  resnext101_32x4d_swsl<br/>
+  resnext101_32x8d_swsl<br/>
+  resnext101_32x16d_swsl<br/>
   
   Enter the variant name as one of the above when prompted.
   For the datasets, you can choose to train it on the Mini dataset or the full dataset. You can download the datasets [here](http://cmp.felk.cvut.cz/met/).
