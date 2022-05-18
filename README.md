@@ -20,6 +20,21 @@ Here, we use 'The Mini Met' & 'Met' [dataset](http://cmp.felk.cvut.cz/met/) whic
 
 Navigate (```cd```) to ```[YOUR_MET_ROOT]/met/code```. ```[YOUR_MET_ROOT]``` is where you have cloned this repository. 
 <details>
+  
+  <details>
+  
+  <summary><b>Perform a KNN test</b></summary><br/>
+  
+  You can download the train, test, and validation descriptors [here](http://cmp.felk.cvut.cz/met/).
+  <br/>
+ Download the train descriptors from the list on top of the README.<br/>
+  Once ready, run the following and follow the prompts:
+  ```
+  python3 run_knn_test.py
+  ```
+
+</details>
+  
   <summary><b>Readily train a non-parametric model</b></summary><br/>
   
   Here, we collectively perform the training and extract the descriptors for the network variant that you wish to run from this list:<br/>
@@ -44,19 +59,7 @@ Navigate (```cd```) to ```[YOUR_MET_ROOT]/met/code```. ```[YOUR_MET_ROOT]``` is 
   ```
   </details>
  
- <details>
-  
-  <summary><b>Perform a KNN test</b></summary>
-  <br/>
-  You can download the train, test, and validation descriptors [here](http://cmp.felk.cvut.cz/met/).
-  <br/>
- Download the train descriptors from the list on top of the README.<br/>
-  Once ready, run the following and follow the prompts:
-  ```
-  python3 run_knn_test.py
-  ```
-
-</details>
+ 
   
 <details>
 
