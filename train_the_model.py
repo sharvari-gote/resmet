@@ -499,7 +499,7 @@ def main():
         train_dataset = MET_database(root = train_root,transform = extraction_transform,im_root = image_root)
     query_root = train_root
     #train_dataset = MET_database(root = train_root,transform = extraction_transform,im_root = './METFiles/')
-    train_dataset = MET_database(root = train_root,mini= True,transform = extraction_transform,im_root = im_root)
+    #train_dataset = MET_database(root = train_root,mini= True,transform = extraction_transform,im_root = im_root)
      #test_dataset = MET_queries(root = query_root,test = True,transform = extraction_transform,im_root = args.im_root)
     test_dataset = MET_queries(root = query_root,test = True,transform = extraction_transform,im_root = im_root)
     #val_dataset = MET_queries(root = query_root,transform = extraction_transform,im_root = args.im_root)
