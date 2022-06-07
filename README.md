@@ -1,6 +1,6 @@
 # Augmenting Backbone Approaches To Instance-level Recognition For Artworks
 Studying the behaviours and patterns drawn by [ResNets](https://en.wikipedia.org/wiki/Residual_neural_network) on '[The Met](https://www.metmuseum.org/)' dataset.
-
+You can learn more about the research [here](project_report.pdf).
 
 Here, we use 'The Mini Met' & 'Met' [dataset](http://cmp.felk.cvut.cz/met/) which contains 33501 and 220k+ classes of 'art' respectively. In our experimentation so far, we have delved into the following (click to download the Descriptors):
 1) ResNet18 on ImageNet ([Mini](https://drive.google.com/file/d/1z1xlRD9-I55N6xh1pki70D0EArHo6uwB/view?usp=sharing)/[Met](https://drive.google.com/file/d/1CUSdCKndQCsX6zJ6q6VHPJsM5HKIHQKJ/view?usp=sharing))
