@@ -1,4 +1,22 @@
 # Augmenting Backbone Approaches To Instance-level Recognition For Artworks
+
+**About this project**
+
+To tackle a dataset for large-scale instance-level recognition in the domain of artworks, we study broad domains
+of Convolutional Neural Networks as backbone structures of learning elemental ‘art’ class features. In addition,
+we expand the learning paradigm with augmented approaches in Instance Level Recognition (ILR) as visual
+recognition tasks on specific object instances. In our contribution, we perform Artwork Recognition (to recognize
+artworks in the images) using non-parametric approaches that attempt to etch profound accuracies on standard
+tests and compete with existing archetypes. The current benchmark exhibits a number of different challenges such
+as large inter-class similarity, long-tail distribution, and many classes. We work on the open-access collection of
+the MET museum art collection which is a large dataset of about 224K classes where each class corresponds to a
+museum exhibit with photos taken under studio conditions. Testing is primarily performed on photos taken by
+museum guests depicting exhibits in order to introduce a distribution shift between practical and ideal samples for
+emulating a real-world performance. A number of suitable approaches are evaluated to offer a testbed for future
+comparisons. Semi-supervised and Semi-weakly supervised models are effectively utilized to train the backbone
+which is used for non-parametric classification that is shown as a promising direction
+
+
 Studying the behaviours and patterns drawn by [ResNets](https://en.wikipedia.org/wiki/Residual_neural_network) on '[The Met](https://www.metmuseum.org/)' dataset.
 You can learn more about the research [here](project_report.pdf).
 
